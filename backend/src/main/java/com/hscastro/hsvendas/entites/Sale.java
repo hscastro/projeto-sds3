@@ -31,19 +31,19 @@ public class Sale implements Serializable   {
 
 	@ManyToOne
 	@JoinColumn(name = "seller_id")
-	private Saller saller;
+	private Seller seller;
 	
 	public Sale() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Saller saller) {
+	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
 		this.id = id;
 		this.visited = visited;
 		this.deals = deals;
 		this.amount = amount;
 		this.date = date;
-		this.saller = saller;
+		this.seller = seller;
 	}
 
 	public Long getId() {
@@ -86,12 +86,12 @@ public class Sale implements Serializable   {
 		this.date = date;
 	}
 
-	public Saller getSaller() {
-		return saller;
+	public Seller getSaller() {
+		return seller;
 	}
 
-	public void setSaller(Saller saller) {
-		this.saller = saller;
+	public void setSaller(Seller seller) {
+		this.seller = seller;
 	}
 
 	@Override

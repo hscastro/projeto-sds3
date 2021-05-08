@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_sellers")
-public class Saller implements Serializable {
+public class Seller implements Serializable {
 
 	private static final long serialVersionUID = 8626723197259113195L;
 	
@@ -23,15 +23,15 @@ public class Saller implements Serializable {
 	
 	private String name;
 	
-	@OneToMany(mappedBy = "saller")
+	@OneToMany(mappedBy = "seller")
 	private List<Sale> sales = new ArrayList<>();
 	
 	
-	public Saller() {
+	public Seller() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Saller(Long id, String name) {
+	public Seller(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -72,7 +72,7 @@ public class Saller implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Saller other = (Saller) obj;
+		Seller other = (Seller) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
